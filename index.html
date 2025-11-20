@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Room</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+#chat { border: 1px solid #ccc; height: 300px; overflow-y: auto; padding: 10px; margin-top: 10px; }
+#messageInput { width: 80%; }
+#sendBtn { width: 18%; }
+</style>
+</head>
+<body>
+
+<h1>Chat Room</h1>
+
+<div id="setup">
+  <label>Room Code: <input type="text" id="roomCode" /></label><br>
+  <label>Password (optional): <input type="password" id="roomPassword" /></label><br>
+  <button id="joinBtn">Join/Create Room</button>
+</div>
+
+<div id="room" style="display:none;">
+  <p>Room: <span id="roomName"></span> (<span id="roomType"></span>)</p>
+  <p>Users: <span id="userCount">0</span></p>
+  <div id="chat"></div>
+  <input id="messageInput" placeholder="Type message..." autocomplete="off" />
+  <button id="sendBtn">Send</button>
+</div>
+
+<div id="error" style="color:red;"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
+
+</body>
+</html>
